@@ -1,38 +1,39 @@
-from flask import Flask, send_from_directory
+
+from flask import Flask, render_template, send_from_directory
 import os
 
-# Initialize Flask application
 app = Flask(__name__)
 
-# Project directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_DIR = os.path.join(BASE_DIR, "static")
+VIDEO_DIR = os.path.join(BASE_DIR, "videos")
 
 
 # Homepage
 @app.route("/")
 def home():
-    return send_from_directory(BASE_DIR, "index.html")
+    return render_template("index.html")
 
 
 # CSS
 @app.route("/style.css")
 def style():
-    return send_from_directory(BASE_DIR, "style.css")
+    return send_from_directory(STATIC_DIR, "style.css")
 
 
 # JavaScript
 @app.route("/script.js")
 def script():
-    return send_from_directory(BASE_DIR, "script.js")
+    return send_from_directory(STATIC_DIR, "script.js")
 
 
 # Video files
 @app.route("/videos/<path:filename>")
 def videos(filename):
-    video_folder = os.path.join(BASE_DIR, "videos")
-    return send_from_directory(video_folder, filename)
+    return send_from_directory(VIDEO_DIR, filename)
 
 
-# Run the application
+# Start Flask application
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
