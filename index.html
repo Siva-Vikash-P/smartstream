@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SmartStream | Intelligent Video Streaming</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <div class="logo">Smart<span>Stream</span></div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#player-section">Stream</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="tagline">
+                    THE NEXT GENERATION OF STREAMING
+                </p>
+
+                <h1>
+                    Stream Smarter.<br>
+                    Use Less Data.
+                </h1>
+
+                <p class="description">
+                    Experience high-quality video streaming
+                    with intelligent bandwidth optimization
+                    and reduced buffering.
+                </p>
+
+                <a href="#player-section" class="watch-btn">
+                    Start Streaming
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- VIDEO PLAYER SECTION -->
+        <section id="player-section" class="player-section">
+
+            <p class="section-tag">SMART VIDEO PLAYER</p>
+
+            <h2>Start Your Streaming Experience</h2>
+
+            <p class="section-description">
+                Paste a direct video URL to start watching.
+            </p>
+
+            <!-- URL INPUT -->
+            <div class="url-box">
+
+                <input
+                    type="url"
+                    id="videoURL"
+                    placeholder="Paste your video URL here..."
+                >
+
+                <button id="playButton">
+                    Play Video
+                </button>
+
+            </div>
+
+            <!-- VIDEO PLAYER -->
+            <div class="video-container">
+
+                <video id="videoPlayer" controls>
+                    Your browser does not support video playback.
+                </video>
+
+                <div id="videoMessage">
+                    Your video will appear here.
+                </div>
+
+            </div>
+
+            <!-- QUALITY SELECTOR -->
+            <div class="quality-panel">
+
+                <label for="qualitySelect">
+                    Streaming Quality
+                </label>
+
+                <select id="qualitySelect">
+                    <option value="-1">Auto</option>
+                </select>
+
+                <p id="qualityStatus">
+                    Quality: Auto
+                </p>
+
+            </div>
+
+            <!-- ERROR MESSAGE -->
+            <p id="errorMessage"></p>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="about-section">
+
+            <h2>Why SmartStream?</h2>
+
+            <p>
+                Our goal is to make video streaming more efficient
+                through adaptive quality and intelligent bandwidth
+                management.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 SmartStream. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- HLS VIDEO PLAYER LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest/dist/hls.min.js"></script>
+
+    <!-- SMARTSTREAM JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
